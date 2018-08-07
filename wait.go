@@ -16,7 +16,6 @@ func (this *Wait) Exec(transInfo *TransInfo) error {
 
 	go func() {
 		<-time.After(this.Timeout * time.Millisecond)
-		//	tc <- struct{}{}
 		close(tc)
 	}()
 
